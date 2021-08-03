@@ -75,6 +75,7 @@ function UsresMenu(props) {
 				onClick={() => setShowusers(!showUsers)}>
 				<div className="name-logo" >
 					<img
+						alt=""
 						style={{ width: "35px", height: "35px" }}
 						src="https://cdn.shopify.com/shopifycloud/web/assets/v1/2e6c49e2a0828a1d532799b14ede5080.svg" />
 					{(!props.reduce) && (<span style={{ margin: "0 5px", }}>{props.selectedUser}</span>)}
@@ -153,12 +154,12 @@ function SideBar(props) {
 							width="24"
 							height="24"
 							xmlns="http://www.w3.org/2000/svg"
-							fill-rule="evenodd"
-							clip-rule="evenodd">
+							fillRule="evenodd"
+							clipRule="evenodd">
 							<path
 								d="m21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
 						</svg>
-						: <svg className="close-menu-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z" /></svg>}
+						: <svg className="close-menu-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z" /></svg>}
 				</span>
 				{(!reduce) && (
 					<div

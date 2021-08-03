@@ -1,9 +1,12 @@
 import './App.css';
 import SideBar from './components/SideBar';
 import { useState, useEffect } from 'react';
+import NavMenu from './components/NavMenu';
+
 
 function App() {
   const [searchVal, setSearchVal] = useState('');
+  const [navItem, setNavItem] = useState(0);
 
   const stores = [
     { abrv: "VDE", name: "Venum EURO DE" },
@@ -25,12 +28,38 @@ function App() {
 
   }, [searchVal]);
 
-
+  const items = [
+    {
+      section: "",
+      items: [
+        {
+          label: "Acceuil",
+        },
+        {
+          label: "Products",
+        },
+        {
+          label: "Customers",
+        },
+      ]
+    },
+    {
+      section: "Canaux de vente",
+      items: [
+        {
+          label: "Boutique en ligne",
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="App">
       <div className="rem-page">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in tellus non tellus pulvinar aliquet vitae quis nibh. Aenean euismod egestas dolor at fermentum. Proin consequat tortor vel ultrices tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin molestie convallis porttitor. Nulla facilisi. Morbi sagittis ipsum non sem dictum fermentum. Praesent id augue eget neque commodo posuere ac sit amet diam. Donec mollis congue felis. Duis egestas rutrum elit, non congue dui hendrerit maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in tellus non tellus pulvinar aliquet vitae quis nibh. Aenean euismod egestas dolor at fermentum. Proin consequat tortor vel ultrices tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin molestie convallis porttitor. Nulla facilisi. Morbi sagittis ipsum non sem dictum fermentum. Praesent id augue eget neque commodo posuere ac sit amet diam. Donec mollis congue felis. Duis egestas rutrum elit, non congue dui hendrerit maximus.</h1>
+        <NavMenu
+          selected={navItem}
+          onSelect={setNavItem}
+          links={items} />
       </div>
       <SideBar
         users={users}
